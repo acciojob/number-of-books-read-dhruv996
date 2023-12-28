@@ -1,25 +1,17 @@
-const library = [
-  {
-    author: "Bill Gates",
-    title: "The Road Ahead",
-    readingStatus: true,
-  },
-  {
-    author: "Steve Jobs",
-    title: "Walter Isaacson",
-    readingStatus: true,
-  },
-  {
-    author: "Suzanne Collins",
-    title: "Mockingjay: The Final Book of The Hunger Games",
-    readingStatus: false,
-  },
-];
+document.addEventListener('DOMContentLoaded', function () {
+  // Example usage
+  const library = [
+    { author: 'Author 1', title: 'Book 1', readingStatus: true },
+    { author: 'Author 2', title: 'Book 2', readingStatus: false },
+    { author: 'Author 3', title: 'Book 3', readingStatus: true },
+    // Add more books as needed
+  ];
 
-const numberOfBooksRead = () => {
-  // write your code here
-};
+  const result = numberOfBooksRead(library);
+  document.getElementById('result').innerText = `Number of books read: ${result}`;
+});
 
-// Do not change the code below
+function numberOfBooksRead(library) {
+  return library.filter(book => book.readingStatus).length;
+}
 
-alert(numberOfBooksRead());
